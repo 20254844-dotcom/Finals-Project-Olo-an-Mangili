@@ -5,7 +5,7 @@ import FeedbackForm from "../components/FeedbackForm";
 const CreateFeedback: React.FC = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = async (data: {
+const handleSubmit = async (data: {
     teacherName: string;
     subject: string;
     rating: number;
@@ -17,6 +17,7 @@ const CreateFeedback: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+      alert("Thank you for your feedback! 🎉");
       navigate("/");
     } catch (error) {
       console.error("Error creating feedback:", error);
